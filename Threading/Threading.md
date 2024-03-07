@@ -72,3 +72,18 @@ if __name__ =="__main__":
 ```
 
 ![Alt text](image.png)
+
+
+# Python ThreadPool
+- A thread pool is a collection of threads that are created in advance and can be reused to execute multiple tasks
+- *concurrent.futures module* provides a ThreadPoolExecutor class that makes it easy to create and manage a thread pool.
+- We create a theradpool executor with a max size.
+- Submit tasks to it and they will be executed.
+- We use shutdown method to wait for all tasks to complete before the main thread continues.
+
+[Thread Pool](threadPool.py)
+
+Try to play with the code.  You can change the number of threads in the pool or add more tasks.
+
+Observe the thread id when you are running simple tasks without timeouts and when you are running the tasks with more timeout.
+It will help you understand better.
