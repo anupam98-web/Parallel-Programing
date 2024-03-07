@@ -3,16 +3,19 @@ import time
 import random
 
 def task1():
+    """Function printing Task 1."""
     print("Task 1 started")
     time.sleep(random.uniform(0, 10))  # Simulating I/O-bound operation with timeout of 3 seconds
     print("Task 1 completed")
 
 def task2():
+    """Function printing Task 2."""
     print("Task 2 started")
     time.sleep(random.uniform(0, 5))  # Simulating I/O-bound operation with timeout of 5 seconds
     print("Task 2 completed")
 
 def task3():
+    """Function printing Task 3."""
     print("Task 3 started")
     time.sleep(random.uniform(0, 2))  # Simulating I/O-bound operation with timeout of 2 seconds
     print("Task 3 completed")

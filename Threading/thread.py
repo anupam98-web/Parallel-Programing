@@ -21,7 +21,9 @@ for task_name, timeout in tasks:
     thread.start()
     threads.append(thread)
 
-# Wait for all threads to finish
+# Wait for all threads to finish.
+# Comment below two lines and run the code again.
+# It will run the main thread as well without waiting for other threads to complete.
 for thread in threads:
     thread.join()
 
