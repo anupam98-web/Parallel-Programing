@@ -87,3 +87,31 @@ Try to play with the code.  You can change the number of threads in the pool or 
 
 Observe the thread id when you are running simple tasks without timeouts and when you are running the tasks with more timeout.
 It will help you understand better.
+
+# Synchronization between threads
+*Thread synchronization* is defined as a mechanism which ensures that two or more concurrent threads do not simultaneously execute some particular program segment known as critical section.
+
+*Critical section* refers to the parts of the program where the shared resource is accessed.
+
+This could lead to *Race condition*.
+*Race Condition* - Different Thread try to make change in a single shared resource at the same time.
+It leads to unexpected output.
+
+![Alt text](image-1.png)
+
+So  we need to ensure that only one thread accesses the critical section at a time. To prevent the race condition.
+
+[Prevent Race condition](lockRelease.py)
+
+- Threading module provides a Lock class to deal with the race conditions. Lock is implemented using a Semaphore object provided by the Operating System.
+
+- A semaphore is a synchronization object that controls access by multiple processes/threads to a common resource in a parallel programming environment. It is simply a value in a designated place in operating system (or kernel) storage that each process/thread can check and then change. Depending on the value that is found, the process/thread can use the resource or will find that it is already in use and must wait for some period before trying again. Semaphores can be binary (0 or 1) or can have additional values. Typically, a process/thread using semaphores checks the value and then, if it using the resource, changes the value to reflect this so that subsequent semaphore users will know to wait.
+
+- Lock class provides following methods:
+**acquire([blocking])**
+- By default this is true. 
+- we apply lock using lock.acquire() method. As soon as a lock is acquired, no other thread can access the critical section (here, increment function) until the lock is released using lock.release() method.
+
+**release()**
+- Release  the lock, so other threads can access the critical section.
+- If lock is already unlocked, a ThreadError is raised.
