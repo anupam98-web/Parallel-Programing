@@ -1,0 +1,4 @@
+## Async Event Loop in Python
+In the program below, we’re using await fn2() after the first print statement. It simply means to wait until the other function is done executing. So, first, it’s gonna print “one,” then the control shifts to the second function, and “two” and “three” are printed after which the control shifts back to the first function (because fn() has done its work) and then “four” and “five” are printed. This interaction demonstrates the principles of asynchronous programming, which are especially relevant when working with async iterators in Python.
+
+Unlike multithreading, where threads are managed by the operating system scheduler, asyncio uses a single-threaded event loop to manage multiple asynchronous tasks. This event loop schedules and executes tasks in a cooperative manner, avoiding the overhead associated with thread creation and context switching.
