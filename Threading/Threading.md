@@ -71,7 +71,7 @@ if __name__ =="__main__":
 
 ```
 
-![Alt text](image.png)
+![Alt text](images/image.png)
 
 
 # Python ThreadPool
@@ -97,7 +97,7 @@ This could lead to *Race condition*.
 *Race Condition* - Different Thread try to make change in a single shared resource at the same time.
 It leads to unexpected output.
 
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
 So  we need to ensure that only one thread accesses the critical section at a time. To prevent the race condition.
 
