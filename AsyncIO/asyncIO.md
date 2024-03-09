@@ -27,6 +27,15 @@ async def main():
 asyncio.run(main())  # Run the main coroutine within the asyncio event loop
 
 ```
+- Async functions have a lifecycle similar to generator-based coroutines:
+- They start execution when called, returning a coroutine object.
+- Execution proceeds until the first await expression is encountered.
+- Control returns to the event loop, and the coroutine suspends.
+- The event loop schedules other tasks or coroutines for execution.
+- When the awaited operation completes, the coroutine resumes execution.
+- This process continues until the coroutine reaches the end or encounters an exception.
+
+
 # How Coroutines are implemented.
 We first have to understand how **Generator** Works. As Coroutines use generator for there implementation.
 I have given [Coroutine Implementation using Generators](coroutine.py). Please  go through it before moving forward.
@@ -46,4 +55,9 @@ Please play with code and check how the output is changing.
 
 
 # Note
-**Unlike multithreading, where threads are managed by the operating system scheduler, asyncio uses a single-threaded event loop to manage multiple asynchronous tasks. This event loop schedules and executes tasks in a cooperative manner, avoiding the overhead associated with thread creation and context switching.**
+- **Unlike multithreading, where threads are managed by the operating system scheduler, asyncio uses a single-threaded event loop to manage multiple asynchronous tasks. This event loop schedules and executes tasks in a cooperative manner, avoiding the overhead associated with thread creation and context switching.**
+- Asyncio Runs on Single Thread.
+Event Loop:
+- Coroutines are executed within an event loop, which schedules and runs coroutines in a cooperative multitasking manner.
+The event loop manages the execution of coroutines, scheduling and running them in an efficient manner. It ensures that coroutines yield control appropriately so that other tasks can execute concurrently.
+- Both asyncio and JavaScript's event loop facilitate concurrency and scalability by allowing multiple tasks to execute concurrently without the overhead of creating additional threads. This enables efficient handling of large numbers of concurrent connections or operations.
