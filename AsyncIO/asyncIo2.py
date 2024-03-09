@@ -16,3 +16,13 @@ async def fn2():
 	print("three")
 	
 asyncio.run(fn())
+
+
+# Output
+'''
+one
+four
+two
+five
+three
+'''
