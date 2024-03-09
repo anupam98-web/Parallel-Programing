@@ -41,12 +41,14 @@ We first have to understand how **Generator** Works. As Coroutines use generator
 I have given [Coroutine Implementation using Generators](coroutine.py). Please  go through it before moving forward.
 Now what we see in current python are `async await`.
 
-[Basic code using AsyncIO to show wait and execution of another function.](asyncio.py) -> 
-Talk about how there is waiting in the program. And how we add the fn2 to execute `await` keyword makes our function wait till it completed and then move to next line of code.
-[Creating a Task Using AsyncIO and showing parallelism](asyncio2.py) -> 
+[Basic code using AsyncIO to show wait and execution of another function.](asyncio.py) ->  
+- Talk about how there is waiting in the program. And how we add the fn2 to execute `await` keyword makes our function wait till it completed and then move to next line of code.  
+
+[Creating a Task Using AsyncIO and showing parallelism](asyncio2.py) ->    
 - In This file we have created a task so that it will run fn2 until fn1 is waiting showing proper concurrent programming. I have given the output in the code itself for better understanding.
-- This means that the other function will begin to run anytime if there is any free time using asyncio.create_task(fn2())
-[Running 3 Functions using AsyncIO showing how differnt function run parallely.](asyncio3.py) -> 
+- This means that the other function will begin to run anytime if there is any free time using asyncio.create_task(fn2())  
+
+[Running 3 Functions using AsyncIO showing how differnt function run parallely.](asyncio3.py) ->  
 - We have use `await asyncio.gather()` method of asyncio. Task will start whenever other task is waiting achieving concurrency.
 - func1(), func2(), and func3() functions are simulated I/O-bound tasks using asyncio.sleep(). They each “wait” for a different amount of time to simulate varying levels of work.
 - When you run this code, you’ll see that the tasks start concurrently, perform their work asynchronously, and then complete in parallel. The order of completion might vary depending on how the asyncio event loop schedules the tasks. This asynchronous behavior is fundamental to understanding how to manage tasks efficiently, especially when working with async iterators in Python.
