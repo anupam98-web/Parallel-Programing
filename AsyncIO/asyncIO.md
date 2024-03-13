@@ -26,7 +26,9 @@ async def main():
 
 asyncio.run(main())  # Run the main coroutine within the asyncio event loop
 
-```
+```  
+[Coroutine Implementation](coroutine.py)
+
 - Async functions have a lifecycle similar to generator-based coroutines:
 - They start execution when called, returning a coroutine object.
 - Execution proceeds until the first await expression is encountered.

@@ -13,9 +13,15 @@ Multiprocessing is a Python module that enables the creation, management, and co
 - **Multiprocessing enables Python programs to leverage multiple CPU cores and processors, making it suitable for CPU-bound tasks that can benefit from parallel execution.**
 - multiprocessing provides fault isolation. If one process encounters an error or crashes, it does not affect other processes, making the overall program more robust.
 
-
+[Simple Implementations of Multi Processing](multiProcessing.py)    
+[Simple Implementations of Multi Processing showing Thread ID](multiProcess2.py)
 # Communication between Processes
- In multiprocessing, any newly created process will do following:  
+
+Simlar to threads Process also have race conditions which might changed the output when process are working on a common data.  
+[Race Condition](raceCondition.py)  
+
+To prevent the race condition the communication is necessary among the processes which is mentioned.  
+In multiprocessing, any newly created process will do following:  
 run independently  
 have their own memory space.
 
@@ -137,12 +143,15 @@ if __name__ == '__main__':
 
 # Multiprocessing supports two types of communication channel between processes.
 - Queue  
-A simple way to communicate between process with multiprocessing is to use a Queue to pass messages back and forth. Any Python object can pass through a Queue. Note: The multiprocessing.Queue class is a near clone of queue.Queue.
+A simple way to communicate between process with multiprocessing is to use a Queue to pass messages back and forth. Any Python object can pass through a Queue. Note: The multiprocessing.Queue class is a near clone of queue.Queue.  
+[Queue Share Implementation](queueSharing.py)
 ![Alt text](images/image3.png)
 
 
 - Pipe  
-A pipe can have only two endpoints. Hence, it is preferred over queue when only two-way communication is required. multiprocessing module provides Pipe() function which returns a pair of connection objects connected by a pipe. The two connection objects returned by Pipe() represent the two ends of the pipe. Each connection object has send() and recv() methods (among others)
+A pipe can have only two endpoints. Hence, it is preferred over queue when only two-way communication is required. multiprocessing module provides Pipe() function which returns a pair of connection objects connected by a pipe. The two connection objects returned by Pipe() represent the two ends of the pipe. Each connection object has send() and recv() methods (among others)  
+[Pipe Share Implementation](pipeSharing.py)  
+
 
 ![Alt text](images/image2.png)
 
@@ -169,6 +178,8 @@ balance.value = balance.value - 1
 lock.release()
 ```
 
+[Lock Implementation](lockProcess.py)
+
 # Pooling between processes
 
 There are a few arguments for gaining more control over offloading of task. These are:  
@@ -178,3 +189,5 @@ All the processes in a pool can be made to perform some initialization using the
 - initializer: specify an initialization function for worker processes.  
 - initargs: arguments to be passed to initializer.  
 Now, in order to perform some task, we have to map it to some function. In the example above, we map mylist to square function. As a result, the contents of mylist and definition of square will be distributed among the cores.
+
+[Pool Implementation](pool.py)

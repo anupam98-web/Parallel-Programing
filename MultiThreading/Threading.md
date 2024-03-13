@@ -71,6 +71,9 @@ if __name__ =="__main__":
 
 ```
 
+[Simple Thread Implementation](simpleThread.py)   
+[Loop Thread Implementation](thread.py) 
+
 ![Alt text](images/image.png)
 
 
@@ -79,7 +82,9 @@ if __name__ =="__main__":
 - *concurrent.futures module* provides a ThreadPoolExecutor class that makes it easy to create and manage a thread pool.
 - We create a theradpool executor with a max size.
 - Submit tasks to it and they will be executed.
-- We use shutdown method to wait for all tasks to complete before the main thread continues.
+- We use shutdown method to wait for all tasks to complete before the main thread continues.  
+
+Note: **Do not confuse thread pool as a Process itself. Processor could have n number of threads whereas threadpool is a collection of countable threads which helps in keeping memory in check and prevent overuse of the resources.**
 
 [Thread Pool](threadPool.py)
 
@@ -96,6 +101,8 @@ It will help you understand better.
 This could lead to *Race condition*.
 *Race Condition* - Different Thread try to make change in a single shared resource at the same time.
 It leads to unexpected output.
+
+[Race Condition](raceCondition.py)
 
 ![Alt text](images/image-1.png)
 
